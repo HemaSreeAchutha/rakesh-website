@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #F4F5F7;
+  color: #1F2937;
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Archivo', sans-serif;
+}
+
+::selection {
+  background-color: #FF6B35;
+  color: #FFFFFF;
+}
