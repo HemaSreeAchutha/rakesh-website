@@ -1,15 +1,30 @@
-const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
+require("dotenv").config();
 
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
-  requireTLS: true,
-  family: 4,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+/**
+ * Drop-in replacement for the Nodemailer transporter.
+ * Keeps the same sendMail({ to, subject, html, replyTo }) shape
+ * so no controller needs changing.
+ */
+const transporter = {
+  sendMail: async ({ to, subject, html, text, replyTo }) => {
+    const { data, error } = await resend.emails.send({
+      from: process.env.EMAIL_FROM,
+      to: Array.isArray(to) ? to : [to],
+      subject,
+      html,
+      text,
+      replyTo,
+    });
+
+    if (error) {
+      throw new Error(error.message || "Email send failed");
+    }
+
+    return data;
   },
-});
+};
 
 module.exports = transporter;

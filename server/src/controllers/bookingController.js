@@ -87,7 +87,7 @@ exports.createBooking = async (req, res) => {
     });
     await transporter.sendMail({
       from: `"Booking System" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_USER,
+      to: process.env.EMAIL_TO,
       replyTo: email,
       subject: adminMail.subject,
       html: adminMail.html,

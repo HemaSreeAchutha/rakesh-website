@@ -20,7 +20,7 @@ exports.sendContactMessage = async (req, res) => {
   try {
     await transporter.sendMail({
       from: `"Portfolio Contact Form" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_USER,
+      to: process.env.EMAIL_TO,
       replyTo: email,
       subject: `New message from ${name}`,
       text: message,
