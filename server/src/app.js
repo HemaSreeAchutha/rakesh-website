@@ -5,9 +5,11 @@ require("dotenv").config();
 const app = express();
 
 const allowedOrigins = [
-  process.env.CLIENT_URL,
+  "https://rakeshachutha.com",
+  "https://www.rakeshachutha.com",
+  "https://rakesh-website.vercel.app",
   "http://localhost:5173",
-].filter(Boolean);
+];
 
 app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(express.json());
