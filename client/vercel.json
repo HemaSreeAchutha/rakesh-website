@@ -1,3 +1,7 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/whiteboard", "destination": "https://smart-whiteboard.onrender.com/whiteboard/" },
+    { "source": "/whiteboard/:path*", "destination": "https://smart-whiteboard.onrender.com/whiteboard/:path*" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
