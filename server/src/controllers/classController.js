@@ -105,8 +105,9 @@ exports.registerForClass = async (req, res) => {
       currency: session.currency,
     });
     await transporter.sendMail({
-      from: `"Rakesh Achutha" <${process.env.EMAIL_USER}>`,
+      from: process.env.EMAIL_FROM,
       to: email,
+      replyTo: process.env.EMAIL_TO,
       subject: mail.subject,
       html: mail.html,
     });

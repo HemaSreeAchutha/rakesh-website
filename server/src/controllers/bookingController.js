@@ -86,7 +86,7 @@ exports.createBooking = async (req, res) => {
       startTime: slot.start_time,
     });
     await transporter.sendMail({
-      from: `"Booking System" <${process.env.EMAIL_USER}>`,
+      from: process.env.EMAIL_FROM,
       to: process.env.EMAIL_TO,
       replyTo: email,
       subject: adminMail.subject,

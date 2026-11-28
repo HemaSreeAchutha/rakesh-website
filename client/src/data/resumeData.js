@@ -3,7 +3,7 @@ export const profile = {
   roles: ["Quantum Researcher","Entrepreneur","Quantum and Math Consultant", "Oxbridge Tutor"],
   tagline:
     "PhD researcher at Cambridge working on quantum many-body systems, Quantum Algorithms and Quantum Machine Learning — and a Start up enthusiast, always eager to learn, loves to talk people and learn from them.",
-  email: "rakeshachutha@gmail.com",
+  email: "rakesh.cam.uk@gmail.com",
   website: "rakeshachutha.com",
 };
 

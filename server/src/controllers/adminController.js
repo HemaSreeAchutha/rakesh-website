@@ -184,8 +184,9 @@ exports.confirmBooking = async (req, res) => {
         meetingLink,
       });
       await transporter.sendMail({
-        from: `"Rakesh Achutha" <${process.env.EMAIL_USER}>`,
+        from: process.env.EMAIL_FROM,
         to: booking.email,
+        replyTo: process.env.EMAIL_TO,
         subject: mail.subject,
         html: mail.html,
       });

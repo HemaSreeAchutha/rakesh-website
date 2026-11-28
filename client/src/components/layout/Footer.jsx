@@ -11,7 +11,7 @@ export default function Footer() {
           <a href="mailto:rakeshachutha@gmail.com"
           className="text-sm text-accent hover:text-accent-soft transition-colors font-medium"
           >
-          rakeshachutha@gmail.com
+          rakesh.cam.uk@gmail.com
         </a>
       </div>
       <p className="text-center text-xs text-text-muted pb-6">
